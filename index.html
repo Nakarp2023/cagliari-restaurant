@@ -29,4 +29,11 @@ const openDish=d=>{document.getElementById('detailName').textContent=d.name||'Б
 const grid=document.querySelector('#menu .grid');if(!grid)return;grid.addEventListener('click',e=>{const card=e.target.closest('.dish');if(!card)return;const idx=[...grid.children].indexOf(card);const data=window.cagliariShown?.[idx];if(data)openDish(data);});
 window.cagliariOpenDish=openDish;
 })();
+
+// Original cinematic scroll treatment: gentle image drift, section progress and focus.
+(()=>{const frame=document.querySelector('.filmframe'),strip=document.querySelector('.filmstrip');if(!frame||!strip)return;
+const img=frame.querySelector('img');let raf=0;
+const paint=()=>{raf=0;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=strip.getBoundingClientRect(),vh=innerHeight;const p=Math.max(0,Math.min(1,(vh-r.top)/(vh+r.height)));img.style.transform='scale('+(1.035+p*.045)+') translateY('+(p*1.5-0.75)+'%)';};
+addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(paint)},{passive:true});addEventListener('resize',paint);paint();
+})();
 </script></body></html>
