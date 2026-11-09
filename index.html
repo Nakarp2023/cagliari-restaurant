@@ -23,7 +23,7 @@
 <script>
 (()=>{const modal=document.getElementById('dishDetail');const close=()=>{modal.classList.remove('open');document.body.style.overflow='';};document.getElementById('detailClose').onclick=close;modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 const openDish=d=>{document.getElementById('detailName').textContent=d.name||'Блюдо';document.getElementById('detailDescription').textContent=d.description||'Подробности блюда уточняйте у команды ресторана.';document.getElementById('detailPrice').textContent=d.price?Number(d.price).toLocaleString('ru-RU')+' ₽':'Цена в меню';document.getElementById('detailAllergens').textContent='Аллергены: '+((d.allergens||[]).join(', ')||'уточняйте у официанта');const im=document.getElementById('detailImage');im.src=d.image_url||'';im.alt=d.name||'';modal.classList.add('open');document.body.style.overflow='hidden';};
-const grid=document.querySelector('#menu .grid');if(!grid)return;grid.addEventListener('click',e=>{const card=e.target.closest('.dish');if(!card)return;const idx=[...grid.children].indexOf(card);const data=window.cagliariMenu?.[idx];if(data)openDish(data);});
+const grid=document.querySelector('#menu .grid');if(!grid)return;grid.addEventListener('click',e=>{const card=e.target.closest('.dish');if(!card)return;const idx=[...grid.children].indexOf(card);const data=window.cagliariShown?.[idx];if(data)openDish(data);});
 window.cagliariOpenDish=openDish;
 })();
 </script></body></html>
