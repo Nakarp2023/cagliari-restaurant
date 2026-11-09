@@ -48,6 +48,25 @@ body{background:#f7f5ef;color:#25251f}
 .dish-detail{background:#25251f88}.detail-panel{background:#fff;border-color:#25251f20}.detail-content p{color:#77766d}.detail-close{background:#25251f;color:#fff}
 .detail-ingredients span{color:#55544c;border-color:#25251f20}
 @media(max-width:760px){.heroimg{height:min(68svh,620px);min-height:440px}.hero{padding-bottom:28px}}
+/* FIX: restore agreed light identity + prevent blank reveal on iOS */
+:root{--bg:#f8f6f0;--cream:#24251f;--olive:#85885e;--muted:#77766e;--line:#24251f24}
+body{background:#f8f6f0!important;color:#24251f!important}
+.nav{border-color:#24251f24}.brand{color:#24251f}.brand small{color:#85885e}
+.links{color:#55564e}.book{color:#24251f;border-color:#85885e}
+.hero p,.intro p,.story p,.visit p{color:#77766e}
+.btn{background:#85885e;color:#fff}.btn.secondary{color:#24251f;border-color:#24251f35}
+.dish{background:#fff;border-color:#24251f18}.info p{color:#77766e}.info a,.dish-more{color:#85885e}
+.footer{border-color:#24251f24;color:#77766e}.footer strong{color:#24251f}
+.reveal{opacity:1!important;transform:none!important}
+.dish-detail{background:#24251f88}.detail-panel{background:#f8f6f0;color:#24251f}.detail-content p{color:#77766e}
+@media(max-width:760px){
+ .hero{padding:26px 0 30px!important;gap:22px!important}
+ .heroimg{height:clamp(420px,68svh,620px)!important;border-radius:46% 46% 8px 8px!important}
+ .heroimg img{object-position:center 58%}
+ .mobilebook{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom));left:20px;right:20px;z-index:50;display:block}
+ .mobilebook .btn{display:block;text-align:center;box-shadow:0 8px 30px #0002}
+ .caption{bottom:76px!important}
+}
 </style></head><body><div class="wrap"><header class="nav"><a class="brand" href="#">CAGLIARI<small>RISTORANTE ITALIANO</small></a><nav class="links"><a href="#story">Философия</a><a href="#menu">Меню</a><a href="#visit">Контакты</a></nav><a class="book" href="https://cagliari-rest.ru/">Бронирование ↗</a></header>
 <section class="hero"><div class="reveal"><div class="eyebrow">Un viaggio nel gusto · Екатеринбург</div><h1>La dolce<br><em>vita.</em></h1><p>Есть вечера, которые хочется прожить медленно. Вкус Италии, свет свечей, любимое вино и люди рядом. Добро пожаловать в Cagliari.</p><div class="actions"><a class="btn" href="https://cagliari-rest.ru/">Забронировать стол</a><a class="btn secondary" href="#menu">Открыть меню ↓</a></div></div><div class="heroimg"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=90" alt="Атмосфера ресторана"><div class="caption">A tavola, con amore.</div></div></section>
 <section class="filmstrip reveal" aria-label="Cagliari — гастрономическое путешествие"><div class="filmmeta"><span>01 / ATMOSFERA</span><span>SCROLL TO FEEL</span></div><div class="filmframe"><img src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=2000&q=90" alt="Тёплый свет и сервировка итальянского ужина"><div class="filmshade"></div><div class="filmtext"><span class="eyebrow">Un’esperienza da vivere</span><h2>Вечер начинается<br><em>с ощущения.</em></h2><p>Свет. Текстуры. Звук бокала. И вкус, который остаётся в памяти.</p></div><div class="filmstamp">CAGLIARI · EKB</div></div><div class="filmfoot"><span>КУХНЯ · ВИНО · ЛЮДИ</span><span>UNA STORIA, NON SOLO UN MENU</span></div></section>
